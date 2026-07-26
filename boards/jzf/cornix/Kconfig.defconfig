@@ -6,9 +6,6 @@
 ## Main device (left side)
 if BOARD_CORNIX_LEFT
 
-config ZMK_KEYBOARD_NAME
-	default "Cornix"
-
 if USB
 
 config USB_NRFX
