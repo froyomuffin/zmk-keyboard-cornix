@@ -1,0 +1,5 @@
+if SHIELD_CORNIX_DONGLE_XIAO
+
+endif # END ALL
+
+#vim: set ft=kconfig:

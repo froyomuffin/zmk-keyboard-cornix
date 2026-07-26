@@ -1,0 +1,10 @@
+file_format: "1"
+id: cornix_dongle_xiao
+name: CORNIX_DONGLE_XIAO
+type: shield
+url: https://github.com/hitsmaxft/zmk-keyboard-cornix
+requires: [xiao_ble]
+features:
+  - keys
+siblings:
+  - cornix_dongle_xiao
