@@ -111,25 +111,10 @@
         key-positions = <42 43>;
         bindings = <&kp LGUI>;
       };
-      combo_switch_to_base_bak {
-        timeout-ms = <30>;
-        key-positions = <4 5 6 7>;
-        bindings = <&to BA>;
-      };
-      combo_toggle_game_bak {
-        timeout-ms = <30>;
-        key-positions = <28 29 32 33>;
-        bindings = <&tog GA>;
-      };
-      combo_switch_to_config_bak {
-        timeout-ms = <30>;
-        key-positions = <25 16 42 44 19 36>;
-        bindings = <&to CO>;
-      };
-      combo_switch_to_config {
+      combo_toggle_config {
         timeout-ms = <30>;
         key-positions = <30 31>;
-        bindings = <&to CO>;
+        bindings = <&tog CO>;
       };
       combo_cut {
         timeout-ms = <30>;
