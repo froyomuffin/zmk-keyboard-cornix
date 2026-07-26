@@ -1,0 +1,85 @@
+#!/bin/sh
+# Build ZMK firmware locally using Docker
+# Usage: ./build [board] [shield]
+#
+# Without arguments, builds all three: dongle, left, right.
+# With arguments, builds a single target (board [shield]).
+#
+# Examples:
+#   ./build                                          # dongle + left + right
+#   ./build xiao_ble/nrf52840/zmk cornix_dongle_adapter  # dongle only
+#   ./build cornix_left                                  # left half only
+#   ./build cornix_right                                 # right half only
+#
+# Firmware files are copied to firmware/<name>.uf2 at the end.
+
+set -e
+
+BASE_DIR="$(dirname "$(realpath "$0")")"
+CONFIG_DIR="$BASE_DIR/config"
+WEST_WORKSPACE="$BASE_DIR/.west-workspace"
+
+# Default: build all three targets
+if [ $# -ge 1 ]; then
+  TARGETS="$1${2:+ $2}"
+else
+  TARGETS="
+    xiao_ble/nrf52840/zmk cornix_dongle_adapter
+    cornix_left
+    cornix_right
+  "
+fi
+
+mkdir -p "$WEST_WORKSPACE/config"
+
+echo "=== Syncing config ==="
+rsync -a --delete "$CONFIG_DIR/" "$WEST_WORKSPACE/config/"
+
+TMP_RESULTS=$(mktemp)
+
+# Write targets to a temp file, then read with while (avoids pipe subshell issue)
+echo "$TARGETS" > "$TMP_RESULTS.tgts"
+
+while read BOARD SHIELD; do
+  [ -z "$BOARD" ] && continue
+  BUILD_DIR="$BASE_DIR/artifacts/$BOARD"
+  mkdir -p "$BUILD_DIR"
+
+  echo "=== Building $BOARD ($SHIELD) ==="
+
+  SHIELD_ARG=""
+  [ -n "$SHIELD" ] && SHIELD_ARG="-DSHIELD=$SHIELD"
+
+  docker run --rm \
+    -v "$BASE_DIR:/workspace" \
+    -v "$BUILD_DIR:/build" \
+    -v "$WEST_WORKSPACE:/west" \
+    -w /west \
+    zmkfirmware/zmk-build-arm:4.1-branch \
+    sh -c "
+      if [ ! -f .west/config ]; then
+        west init -l /west/config
+      fi
+      west update && west zephyr-export
+      rm -rf /build/*
+      west build -s zmk/app -d /build -b \"$BOARD\" -S studio-rpc-usb-uart -S nrf52840-nosd -- -DZMK_CONFIG=/west/config $SHIELD_ARG -DZMK_EXTRA_MODULES=/workspace
+    "
+
+  FIRM="$BUILD_DIR/zephyr/zmk.uf2"
+  if [ -f "$FIRM" ]; then
+    mkdir -p "$BASE_DIR/firmware"
+    FNAME="firmware/$(basename "$BOARD" | tr '/' '_').uf2"
+    cp "$FIRM" "$BASE_DIR/$FNAME"
+    echo "$FNAME" >> "$TMP_RESULTS"
+  fi
+done < "$TMP_RESULTS.tgts"
+
+rm -f "$TMP_RESULTS.tgts"
+
+echo ""
+echo "=== Done ==="
+echo "Built firmware:"
+cat "$TMP_RESULTS" | while read LINE; do
+  echo "  $LINE"
+done
+rm -f "$TMP_RESULTS"
