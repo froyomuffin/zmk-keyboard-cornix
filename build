@@ -8,7 +8,7 @@
 # Examples:
 #   ./build                                          # dongle + left + right
 #   ./build xiao_ble/nrf52840/zmk cornix_dongle_adapter  # dongle only
-#   ./build cornix_left                                  # left half only
+#   ./build cornix_ph_left                               # left half only
 #   ./build cornix_right                                 # right half only
 #
 # Firmware files are copied to firmware/<name>.uf2 at the end.
@@ -68,9 +68,16 @@ while read BOARD SHIELD; do
   FIRM="$BUILD_DIR/zephyr/zmk.uf2"
   if [ -f "$FIRM" ]; then
     mkdir -p "$BASE_DIR/firmware"
-    FNAME="firmware/$(basename "$BOARD" | tr '/' '_').uf2"
-    cp "$FIRM" "$BASE_DIR/$FNAME"
-    echo "$FNAME" >> "$TMP_RESULTS"
+
+    case "$BOARD" in
+      xiao_ble/nrf52840/zmk)  OUT="dongle.uf2" ;;
+      cornix_ph_left)        OUT="cornix_left.uf2" ;;
+      cornix_left)           OUT="cornix_left_host.uf2" ;;
+      *)                     OUT="$(basename "$BOARD" | tr '/' '_').uf2" ;;
+    esac
+
+    cp "$FIRM" "$BASE_DIR/firmware/$OUT"
+    echo "firmware/$OUT" >> "$TMP_RESULTS"
   fi
 done < "$TMP_RESULTS.tgts"
 
