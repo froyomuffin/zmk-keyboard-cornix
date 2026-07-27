@@ -133,17 +133,17 @@
       };
       combo_cut_mac {
         timeout-ms = <30>;
-        key-positions = <25 26 42>;
+        key-positions = <25 26 43>;
         bindings = <&kp LG(X)>;
       };
       combo_copy_mac {
         timeout-ms = <30>;
-        key-positions = <26 27 42>;
+        key-positions = <26 27 43>;
         bindings = <&kp LG(C)>;
       };
       combo_paste_mac {
         timeout-ms = <30>;
-        key-positions = <27 28 42>;
+        key-positions = <27 28 43>;
         bindings = <&kp LG(V)>;
       };
       combo_ctrl_alt_gui {
