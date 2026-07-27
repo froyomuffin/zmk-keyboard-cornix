@@ -1,7 +1,7 @@
 manifest:
   remotes:
     - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+      url-base: https://github.com/froyomuffin
     - name: hitsmaxft
       url-base: https://github.com/hitsmaxft
     - name: englmaxi
