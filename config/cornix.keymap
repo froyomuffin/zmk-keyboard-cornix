@@ -166,8 +166,8 @@
             bindings = <
             &g_resc         &kp Q           &kp W           &kp E           &kp R           &kp T                                           &kp Y           &kp U           &kp I           &kp O           &kp P           &kp BSPC
             &mt LSHIFT TAB  &mt LSHIFT A    &mt LCTRL S     &mt LALT D      &mt LGUI F      &kp G                                           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &kp SQT
-            &kp LSHIFT      &kp Z           &kp X           &kp C           &kp V           &mt LALT B      &tog GA         &to BA          &mt RALT N      &kp M           &kp COMMA       &kp DOT         &kp UP          &kp FSLH
-            &kp LCTRL       &kp LALT        &kp LGUI                        &kp LALT        &l_mgui         &mt LSHFT SPACE &mt RSHFT RET   &mo RM          &kp BSLH                        &kp LEFT        &kp DOWN        &kp RIGHT
+            &kp LCTRL       &kp Z           &kp X           &kp C           &kp V           &mt LALT B      &tog GA         &to BA          &mt RALT N      &kp M           &kp COMMA       &kp DOT         &kp UP          &kp FSLH
+            &kp LSHIFT      &kp LALT        &kp LGUI                        &kp LALT        &l_mgui         &mt LSHFT SPACE &mt RSHFT RET   &mo RM          &kp BSLH                        &kp LEFT        &kp DOWN        &kp RIGHT
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
@@ -187,8 +187,8 @@
             display-name = "RMOD";
             bindings = <
             &kp DEL         &kp N1          &kp N2          &kp N3          &kp N4          &kp LPAR                                        &kp RPAR        &kp N7          &kp N8          &kp N9          &kp N0          &kp BSPC
-            &kp LSHIFT      &kp A           &none           &none           &none           &kp LBKT                                        &kp RBKT        &kp N4          &kp N5          &kp N6          &kp C_NEXT      &kp C_VOL_UP
-            &kp LCTRL       &kp Z           &kp X           &kp C           &none           &kp LBRC        &tog GA         &to BA          &kp RBRC        &kp N1          &kp N2          &kp N3          &kp C_PREV      &kp C_VOL_DN
+            &trans          &kp A           &none           &none           &none           &kp LBKT                                        &kp RBKT        &kp N4          &kp N5          &kp N6          &kp C_NEXT      &kp C_VOL_UP
+            &trans          &kp Z           &kp X           &kp C           &none           &kp LBRC        &tog GA         &to BA          &kp RBRC        &kp N1          &kp N2          &kp N3          &kp C_PREV      &kp C_VOL_DN
             &none           &none           &none                           &none           &trans          &trans          &kp C_PP        &trans          &none                           &none           &none           &none
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
