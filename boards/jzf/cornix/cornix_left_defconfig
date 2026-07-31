@@ -57,6 +57,8 @@ CONFIG_ZMK_BLE_PASSKEY_ENTRY=n
 #BLE-clean
 CONFIG_ZMK_BLE_CLEAR_BONDS_ON_START=n
 
+# enable deep sleep support
+CONFIG_ZMK_SLEEP=y
 # idle sleep timeout (1 hour)
 CONFIG_ZMK_IDLE_SLEEP_TIMEOUT=3600000
 
