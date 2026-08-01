@@ -14,6 +14,7 @@
 #define GAME        4
 #define GAME_LMOD   5
 #define GAME_RMOD   6
+#define MACOS      7
 
 #define BA          0
 #define LM          1
@@ -22,6 +23,7 @@
 #define GA          4
 #define GL          5
 #define GR          6
+#define MA          7
 
 
 &mt {
@@ -119,31 +121,37 @@
       combo_cut {
         timeout-ms = <30>;
         key-positions = <25 26>;
+        layers = <BA>;
         bindings = <&kp LC(X)>;
       };
       combo_copy {
         timeout-ms = <30>;
         key-positions = <26 27>;
+        layers = <BA>;
         bindings = <&kp LC(C)>;
       };
       combo_paste {
         timeout-ms = <30>;
         key-positions = <27 28>;
+        layers = <BA>;
         bindings = <&kp LC(V)>;
       };
       combo_cut_mac {
         timeout-ms = <30>;
-        key-positions = <25 26 43>;
+        key-positions = <25 26>;
+        layers = <MA>;
         bindings = <&kp LG(X)>;
       };
       combo_copy_mac {
         timeout-ms = <30>;
-        key-positions = <26 27 43>;
+        key-positions = <26 27>;
+        layers = <MA>;
         bindings = <&kp LG(C)>;
       };
       combo_paste_mac {
         timeout-ms = <30>;
-        key-positions = <27 28 43>;
+        key-positions = <27 28>;
+        layers = <MA>;
         bindings = <&kp LG(V)>;
       };
       combo_ctrl_alt_gui {
@@ -233,6 +241,17 @@
             &none           &none           &none           &none           &none           &none                                           &none           &none           &none           &none           &none           &none
             &none           &none           &none           &none           &none           &none           &tog GA         &to BA          &none           &none           &none           &none           &none           &none
             &none           &none           &none                           &none           &to BA          &mo CO          &none           &none           &none                           &none           &none           &none
+            >;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        MACOS {
+            display-name = "Macos";
+            bindings = <
+            &trans          &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &trans          &trans
+            &trans          &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &trans          &trans
+            &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans           &trans          &trans          &trans          &trans          &trans          &trans
+            &trans          &trans          &trans                          &trans          &trans          &trans          &trans           &trans          &trans                          &trans          &trans          &trans
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
