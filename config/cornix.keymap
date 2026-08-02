@@ -14,7 +14,7 @@
 #define GAME        4
 #define GAME_LMOD   5
 #define GAME_RMOD   6
-#define MACOS      7
+#define MACOS       7
 
 #define BA          0
 #define LM          1
@@ -174,7 +174,7 @@
             bindings = <
             &g_resc         &kp Q           &kp W           &kp E           &kp R           &kp T                                           &kp Y           &kp U           &kp I           &kp O           &kp P           &kp BSPC
             &mt LSHIFT TAB  &kp A           &kp S           &kp D           &mt LGUI F      &kp G                                           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &kp SQT
-            &kp LCTRL       &kp Z           &kp X           &kp C           &kp V           &mt LALT B      &tog GA         &to BA          &mt RALT N      &kp M           &kp COMMA       &kp DOT         &kp UP          &kp FSLH
+            &kp LCTRL       &kp Z           &kp X           &kp C           &kp V           &mt LALT B      &tog GA         &tog MA         &mt RALT N      &kp M           &kp COMMA       &kp DOT         &kp UP          &kp FSLH
             &kp LSHIFT      &kp LALT        &kp LGUI                        &kp LALT        &l_mgui         &mt LSHFT SPACE &mt RSHFT RET   &mo RM          &kp BSLH                        &kp LEFT        &kp DOWN        &kp RIGHT
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -185,7 +185,7 @@
             bindings = <
             &kp DEL         &none           &none           &kp UP          &none           &kp LPAR                                        &kp RPAR        &none           &kp UP          &none           &none           &kp BSPC
             &trans          &trans          &kp LEFT        &kp DOWN        &kp RIGHT       &kp LBKT                                        &kp RBKT        &kp LEFT        &kp DOWN        &kp RIGHT       &none           &none
-            &trans          &none           &none           &none           &none           &kp LBRC        &tog GA         &to BA          &kp RBRC        &none           &none           &none           &none           &none
+            &trans          &none           &none           &none           &none           &kp LBRC        &tog GA         &tog MA         &kp RBRC        &none           &none           &none           &none           &none
             &none           &none           &none                           &none           &trans          &trans          &trans          &trans          &none                           &none           &none           &none
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -196,7 +196,7 @@
             bindings = <
             &kp DEL         &kp N1          &kp N2          &kp N3          &kp N4          &kp LPAR                                        &kp RPAR        &kp N7          &kp N8          &kp N9          &kp N0          &kp BSPC
             &trans          &kp A           &none           &none           &none           &kp LBKT                                        &kp RBKT        &kp N4          &kp N5          &kp N6          &kp C_NEXT      &kp C_VOL_UP
-            &trans          &kp Z           &kp X           &kp C           &none           &kp LBRC        &tog GA         &to BA          &kp RBRC        &kp N1          &kp N2          &kp N3          &kp C_PREV      &kp C_VOL_DN
+            &trans          &kp Z           &kp X           &kp C           &none           &kp LBRC        &tog GA         &tog MA         &kp RBRC        &kp N1          &kp N2          &kp N3          &kp C_PREV      &kp C_VOL_DN
             &none           &none           &none                           &none           &trans          &trans          &kp C_PP        &trans          &none                           &none           &none           &none
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -207,7 +207,7 @@
             bindings = <
             &none           &none           &none           &none           &none           &none                                           &none           &none           &none           &none           &none           &none
             &none           &none           &none           &none           &none           &none                                           &none           &none           &none           &none           &none           &none
-            &sys_reset      &none           &none           &none           &none           &none           &tog GA         &to BA          &none           &none           &none           &none           &none           &bootloader
+            &sys_reset      &none           &none           &none           &none           &none           &tog GA         &tog MA         &none           &none           &none           &none           &none           &bootloader
             &none           &none           &none                           &none           &none           &none           &none           &none           &none                           &none           &none           &none
             >;
         };
@@ -217,7 +217,7 @@
             bindings = <
             &none           &g_resc         &kp Q           &kp W           &kp E           &kp R                                           &none           &none           &none           &none           &none           &none
             &none           &kp TAB         &kp A           &kp S           &kp D           &kp F                                           &none           &none           &none           &none           &none           &none
-            &none           &kp LSHIFT      &kp LCTRL       &none           &none           &none           &tog GA         &to BA          &none           &none           &none           &none           &none           &none
+            &none           &kp LSHIFT      &kp LCTRL       &none           &none           &none           &tog GA         &tog MA         &none           &none           &none           &none           &none           &none
             &none           &none           &none                           &none           &kp GL          &mo SPACE       &kp SPACE       &mo GR          &none                           &none           &none           &none
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -228,7 +228,7 @@
             bindings = <
             &none           &none           &none           &none           &none           &none                                           &none           &none           &none           &none           &none           &none
             &none           &none           &none           &none           &none           &none                                           &none           &none           &none           &none           &none           &none
-            &none           &none           &none           &none           &none           &none           &tog GA         &to BA          &none           &none           &none           &none           &none           &none
+            &none           &none           &none           &none           &none           &none           &tog GA         &tog MA         &none           &none           &none           &none           &none           &none
             &none           &none           &none                           &none           &none           &none           &to BA          &mo CO          &none                           &none           &none           &none
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -239,7 +239,7 @@
             bindings = <
             &none           &none           &none           &none           &none           &none                                           &none           &none           &none           &none           &none           &none
             &none           &none           &none           &none           &none           &none                                           &none           &none           &none           &none           &none           &none
-            &none           &none           &none           &none           &none           &none           &tog GA         &to BA          &none           &none           &none           &none           &none           &none
+            &none           &none           &none           &none           &none           &none           &tog GA         &tog MA         &none           &none           &none           &none           &none           &none
             &none           &none           &none                           &none           &to BA          &mo CO          &none           &none           &none                           &none           &none           &none
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -250,8 +250,8 @@
             bindings = <
             &trans          &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &trans          &trans
             &trans          &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &trans          &trans
-            &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans           &trans          &trans          &trans          &trans          &trans          &trans
-            &trans          &trans          &trans                          &trans          &trans          &trans          &trans           &trans          &trans                          &trans          &trans          &trans
+            &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
+            &trans          &trans          &trans                          &trans          &trans          &trans          &trans          &trans          &trans                          &trans          &trans          &trans
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
