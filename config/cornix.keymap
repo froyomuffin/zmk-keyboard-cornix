@@ -113,10 +113,10 @@
         key-positions = <42 43>;
         bindings = <&kp LGUI>;
       };
-      combo_toggle_config {
+      combo_to_base {
         timeout-ms = <30>;
         key-positions = <30 31>;
-        bindings = <&tog CO>;
+        bindings = <&to BA>;
       };
       combo_cut {
         timeout-ms = <30>;
