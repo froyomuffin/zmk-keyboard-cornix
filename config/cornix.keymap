@@ -226,10 +226,10 @@
         GAME_LMOD {
             display-name = "GAME_LMOD";
             bindings = <
-            &none           &none           &none           &none           &none           &none                                           &none           &none           &none           &none           &none           &none
-            &none           &none           &none           &none           &none           &none                                           &none           &none           &none           &none           &none           &none
-            &none           &none           &none           &none           &none           &none           &tog GA         &tog MA         &none           &none           &none           &none           &none           &none
-            &none           &none           &none                           &none           &none           &none           &to BA          &mo CO          &none                           &none           &none           &none
+            &trans          &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &trans          &trans
+            &trans          &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &trans          &trans
+            &trans          &trans          &trans          &trans          &trans          &trans          &tog GA         &tog MA         &trans          &trans          &trans          &trans          &trans          &trans
+            &trans          &trans          &trans                          &trans          &trans          &trans          &to BA          &mo CO          &trans                          &trans          &trans          &trans
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
@@ -237,10 +237,10 @@
         GAME_RMOD {
             display-name = "GAME_RMOD";
             bindings = <
-            &none           &none           &none           &none           &none           &none                                           &none           &none           &none           &none           &none           &none
-            &none           &none           &none           &none           &none           &none                                           &none           &none           &none           &none           &none           &none
-            &none           &none           &none           &none           &none           &none           &tog GA         &tog MA         &none           &none           &none           &none           &none           &none
-            &none           &none           &none                           &none           &to BA          &mo CO          &none           &none           &none                           &none           &none           &none
+            &trans          &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &trans          &trans
+            &trans          &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &trans          &trans
+            &trans          &trans          &trans          &trans          &trans          &trans          &tog GA         &tog MA         &trans          &trans          &trans          &trans          &trans          &trans
+            &trans          &trans          &trans                          &trans          &to BA          &mo CO          &trans          &trans          &trans                          &trans          &trans          &trans
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
